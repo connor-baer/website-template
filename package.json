@@ -1,0 +1,11 @@
+{
+  "name": "website-template",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/connor-baer/website-template.git",
+  "author": "Connor Bär <hello@connorbaer.co>",
+  "license": "MIT",
+  "devDependencies": {
+    "@sumup/foundry": "^1.3.2"
+  }
+}
