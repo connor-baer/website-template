@@ -6,7 +6,7 @@
 
 # Website Template <!-- omit in toc -->
 
-Quickly build a performant website with [Next.js](https://github.com/zeit/next.js/), style it with [Emotion](https://github.com/zeit/next.js/), develop your components in [Storybook](https://github.com/storybooks/storybook), and manage your content with [Notion](https://www.notion.so/).
+Quickly build a performant website with [Next.js](https://github.com/zeit/next.js/), style it with [Emotion](https://github.com/zeit/next.js/), develop your components in [Storybook](https://github.com/storybooks/storybook), test your code with [Jest](https://github.com/facebook/jest), manage your content with [Notion](https://www.notion.so/) and deploy it with [Zeit Now](https://zeit.co/now).
 
 </div>
 
