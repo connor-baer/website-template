@@ -9,7 +9,7 @@
     }
   ],
   "builds": [
-    { "src": "api/**/*.js", "use": "@now/node" },
+    { "src": "api/**/index.js", "use": "@now/node" },
     { "src": "package.json", "use": "@now/next" }
   ]
 }
