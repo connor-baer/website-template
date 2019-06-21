@@ -1,8 +1,20 @@
+/* eslint-disable react/display-name */
 import React from 'react';
 // eslint-disable-next-line max-len
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { BLOCKS } from '@contentful/rich-text-types';
 
 import { fetchNotionData } from '../services/api';
+import Image from '../components/Image';
+
+const options = {
+  renderNode: {
+    [BLOCKS.EMBEDDED_ENTRY]: node => {
+      const { src, alt } = node.data;
+      return <Image src={src} alt={alt} />;
+    }
+  }
+};
 
 // eslint-disable-next-line react/prop-types
 export default function Page({ content = {}, meta = {} }) {
@@ -12,7 +24,7 @@ export default function Page({ content = {}, meta = {} }) {
         {meta.emoji}
         {meta.title}
       </h1>
-      {documentToReactComponents(content)}
+      {documentToReactComponents(content, options)}
     </article>
   );
 }
