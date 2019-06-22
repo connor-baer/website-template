@@ -9,6 +9,7 @@ import createTheme from '../styles/theme';
 import createGlobalStyles from '../styles/global';
 import loadFonts from '../styles/fonts';
 import isSlowConnection from '../utils/is-slow-connection';
+import NProgress from '../components/NProgress';
 
 if (!isSlowConnection()) {
   loadFonts([
@@ -50,6 +51,7 @@ export default class CustomApp extends App {
 
         <ThemeProvider theme={createTheme()}>
           <Global styles={createGlobalStyles()} />
+          <NProgress />
           <Component {...pageProps} />
         </ThemeProvider>
       </Container>
