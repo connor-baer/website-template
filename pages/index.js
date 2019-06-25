@@ -6,6 +6,7 @@ import { BLOCKS } from '@contentful/rich-text-types';
 
 import { fetchNotionData } from '../services/api';
 import Image from '../components/Image';
+import Highlight from '../components/Highlight';
 
 const options = {
   renderNode: {
@@ -13,6 +14,9 @@ const options = {
       const { src, alt } = node.data;
       return <Image src={src} alt={alt} />;
     }
+  },
+  renderMark: {
+    highlight: text => <Highlight>{text}</Highlight>
   }
 };
 
