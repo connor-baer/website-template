@@ -1,6 +1,6 @@
 import FontFaceObserver from 'fontfaceobserver';
 
-import loadFonts, { addClassName } from './fonts';
+import { loadFonts } from './fonts';
 
 const mockLoad = jest.fn();
 jest.mock('fontfaceobserver', () =>
@@ -8,29 +8,6 @@ jest.mock('fontfaceobserver', () =>
 );
 
 describe('Fonts', () => {
-  describe('addClassName', () => {
-    it('should add the class name to the element', () => {
-      const element = {};
-      const className = 'foo';
-      addClassName(element, className);
-      expect(element.className).toBe(className);
-    });
-
-    it('should concatenate the class name with existing class names', () => {
-      const element = { className: 'bar' };
-      const className = 'baz';
-      addClassName(element, className);
-      expect(element.className).toBe('bar baz');
-    });
-
-    it('should do nothing if the element already has the class name', () => {
-      const element = { className: 'baz' };
-      const className = 'baz';
-      addClassName(element, className);
-      expect(element.className).toBe('baz');
-    });
-  });
-
   describe('loadFonts', () => {
     const { sessionStorage } = global;
 

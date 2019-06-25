@@ -20,30 +20,34 @@ const fonts = [
   },
   {
     name: 'Overpass',
-    localName: 'Overpass Regular',
-    weight: '400',
-    style: 'normal'
-  },
-  {
-    name: 'Overpass',
     localName: 'Overpass Bold',
     weight: '700',
-    style: 'normal'
+    style: 'normal',
+    sources: [
+      {
+        url:
+          'https://fonts.gstatic.com/s/overpass/v3/qFdA35WCmI96Ajtm81keds7D4hoiiVI6DLE.woff2',
+        format: 'woff2'
+      }
+    ],
+    unicodeRange:
+      'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD'
   }
 ];
 
-/* eslint-enable max-len */
-
-const fontStack = {
-  default: 'Overpass, Helvetica, Arial, sans-serif',
-  sans: 'Overpass, Helvetica, Arial, sans-serif',
-  serif: 'Overpass, Helvetica, Arial, sans-serif',
+const fontFamily = {
+  default:
+    "'Overpass', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol",
+  sans:
+    "'Overpass', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol",
+  serif: 'Georgia, serif',
   mono: 'Courier New, mono-space'
 };
 
+/* eslint-enable max-len */
+
 const fontWeight = {
   light: '300',
-  regular: '400',
   bold: '700'
 };
 
@@ -336,7 +340,7 @@ export default function createTheme({
     darkmode,
     reducedMotion,
     fonts,
-    fontStack,
+    fontFamily,
     fontWeight,
     typography,
     iconSizes,

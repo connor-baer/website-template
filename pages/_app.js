@@ -7,7 +7,7 @@ import { ThemeProvider } from 'emotion-theming';
 import config from '../config';
 import createTheme from '../styles/theme';
 import createGlobalStyles from '../styles/global';
-import loadFonts from '../styles/fonts';
+import { loadFonts, preloadFonts } from '../styles/fonts';
 import isSlowConnection from '../utils/is-slow-connection';
 import NProgress from '../components/NProgress';
 
@@ -25,6 +25,7 @@ export default class CustomApp extends App {
     const { Component, pageProps = {} } = this.props;
     const { meta = {} } = pageProps;
     const { title, description, type, image } = meta;
+    const theme = createTheme();
     return (
       <Container>
         <Head>
@@ -47,10 +48,11 @@ export default class CustomApp extends App {
           {locale && (
             <meta property="og:locale" content={locale.replace('-', '_')} />
           )}
+          {preloadFonts(theme.fonts)}
         </Head>
 
-        <ThemeProvider theme={createTheme()}>
-          <Global styles={createGlobalStyles()} />
+        <ThemeProvider theme={theme}>
+          <Global styles={createGlobalStyles(theme)} />
           <NProgress />
           <Component {...pageProps} />
         </ThemeProvider>

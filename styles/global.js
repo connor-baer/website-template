@@ -1,4 +1,5 @@
 import { css } from '@emotion/core';
+import { createFontFace } from './fonts';
 
 function createResetStyles() {
   return css`
@@ -366,69 +367,21 @@ function createResetStyles() {
   `;
 }
 
-function createFontStyles() {
-  return css`
-    /* latin-ext */
-    @font-face {
-      font-family: 'Overpass';
-      font-style: normal;
-      font-weight: 300;
-      font-display: swap;
-      src: local('Overpass Light'), local('Overpass-Light'),
-        url(https://fonts.gstatic.com/s/overpass/v3/qFdA35WCmI96Ajtm81kOcc7D4hoiiVI6DLE.woff2)
-          format('woff2');
-      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
-        U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-    }
-    /* latin */
-    @font-face {
-      font-family: 'Overpass';
-      font-style: normal;
-      font-weight: 300;
-      font-display: swap;
-      src: local('Overpass Light'), local('Overpass-Light'),
-        url(https://fonts.gstatic.com/s/overpass/v3/qFdA35WCmI96Ajtm81kOcc7N4hoiiVI6.woff2)
-          format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
-        U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
-        U+2212, U+2215, U+FEFF, U+FFFD;
-    }
-    /* latin-ext */
-    @font-face {
-      font-family: 'Overpass';
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
-      src: local('Overpass Bold'), local('Overpass-Bold'),
-        url(https://fonts.gstatic.com/s/overpass/v3/qFdA35WCmI96Ajtm81keds7D4hoiiVI6DLE.woff2)
-          format('woff2');
-      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
-        U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-    }
-    /* latin */
-    @font-face {
-      font-family: 'Overpass';
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
-      src: local('Overpass Bold'), local('Overpass-Bold'),
-        url(https://fonts.gstatic.com/s/overpass/v3/qFdA35WCmI96Ajtm81keds7N4hoiiVI6.woff2)
-          format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
-        U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
-        U+2212, U+2215, U+FEFF, U+FFFD;
-    }
-
-    .fonts-loaded body {
-      font-family: 'Overpass', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-        Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
-        'Segoe UI Emoji', 'Segoe UI Symbol';
-    }
-  `;
+function createFontStyles(theme) {
+  const { fonts = [] } = theme;
+  return [
+    fonts.map(createFontFace),
+    css`
+      .fonts-loaded body {
+        font-family: ${theme.fontFamily.default};
+        font-weight: ${theme.fontWeight.regular};
+      }
+    `
+  ];
 }
 
-export default function createGlobalStyles() {
+export default function createGlobalStyles(theme = {}) {
   const reset = createResetStyles();
-  const fonts = createFontStyles();
+  const fonts = createFontStyles(theme);
   return [reset, fonts];
 }
