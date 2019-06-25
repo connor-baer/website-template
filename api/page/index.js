@@ -1,21 +1,18 @@
 const { parse } = require('url');
-const { get } = require('lodash/fp');
+const { richTextFromNotion } = require('@madebyconnor/rich-text-from-notion');
 
 const { loadPageChunk } = require('./notion-api');
-const { notionToRichText } = require('./notion-to-rich-text');
 const { getNotionMeta } = require('./notion-meta');
 
 module.exports = async (req, res) => {
   try {
     const { query } = parse(req.url, true);
 
-    const data = await loadPageChunk(query);
+    const page = await loadPageChunk(query);
+    const content = richTextFromNotion(page);
+    const meta = getNotionMeta(page);
 
-    const blocks = get('recordMap.block', data);
-    const content = notionToRichText(blocks);
-    const meta = getNotionMeta(data);
-
-    res.json({ meta, content });
+    res.json({ meta, content, page });
   } catch (error) {
     res.status(error.statusCode || 500);
     res.send(error.stack);

@@ -1020,6 +1020,13 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^12.0.9"
 
+"@madebyconnor/rich-text-from-notion@^1.0.0-alpha.4":
+  version "1.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@madebyconnor/rich-text-from-notion/-/rich-text-from-notion-1.0.0-alpha.4.tgz#6289a39b37035cb38f477df8fd68a2382f71d345"
+  integrity sha512-wMgVmUcw/k+BSuVQPTV9Uo7KvkY0GoklrqpjN6dme9Qn0NNkLq+/B+Zjrmsh3jq9coQqMgwNU5k5QvHvPZ7t2w==
+  dependencies:
+    "@contentful/rich-text-types" "^13.1.0"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -8441,7 +8448,7 @@ npm@6.5.0:
     worker-farm "^1.6.0"
     write-file-atomic "^2.3.0"
 
-npm@^6.8.0:
+npm@^6.8.0, npm@^6.9.0:
   version "6.9.0"
   resolved "https://registry.yarnpkg.com/npm/-/npm-6.9.0.tgz#5296720486814a64a7fb082de00c4b5cfd11211f"
   integrity sha512-91V+zB5hDxO+Jyp2sUKS7juHlIM95dGQxTeQtmZI1nAI/7kjWXFipPrtwwKjhyKmV4GsS2LzJhrxRjGWsU9z/w==
@@ -8712,6 +8719,14 @@ onetime@^2.0.0:
   integrity sha1-BnQoIw/WdEOyeUsiu6UotoZ5YtQ=
   dependencies:
     mimic-fn "^1.0.0"
+
+open-color@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/open-color/-/open-color-1.7.0.tgz#f238344313ab7d8b7576f7704d69ba92ee53b51b"
+  integrity sha512-Kyl74V5gohYxajOVgIaXhvhjKtXfhwl7ddJ28HVXDkPuM8PVdaWbFPucf6qPGW6aXOMxnukw0/R1lLLyXKEffA==
+  dependencies:
+    lodash "^4.17.11"
+    npm "^6.9.0"
 
 opener@^1.5.1:
   version "1.5.1"
@@ -9272,6 +9287,13 @@ pn@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/pn/-/pn-1.1.0.tgz#e2f4cef0e219f463c179ab37463e4e1ecdccbafb"
   integrity sha512-2qHaIQr2VLRFoxe2nASzsV6ef4yOOH+Fi9FBOVH6cqeSgUnoyySPZkxzLuzd+RYOQTRpROA0ztTMqxROKSb/nA==
+
+polished@^3.4.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/polished/-/polished-3.4.1.tgz#1eb5597ec1792206365635811d465751f5cbf71c"
+  integrity sha512-GflTnlP5rrpDoigjczEkS6Ye7NDA4sFvAnlr5hSDrEvjiVj97Xzev3hZlLi3UB27fpxyTS9rWU64VzVLWkG+mg==
+  dependencies:
+    "@babel/runtime" "^7.4.5"
 
 posix-character-classes@^0.1.0:
   version "0.1.1"

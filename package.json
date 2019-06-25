@@ -19,6 +19,7 @@
     "@emotion/babel-preset-css-prop": "^10.0.9",
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.12",
+    "@madebyconnor/rich-text-from-notion": "^1.0.0-alpha.4",
     "emotion-theming": "^10.0.10",
     "fontfaceobserver": "^2.1.0",
     "isomorphic-unfetch": "^3.0.0",
@@ -26,6 +27,8 @@
     "next": "^8.1.0",
     "node-fetch": "^2.3.0",
     "nprogress": "^0.2.0",
+    "open-color": "^1.7.0",
+    "polished": "^3.4.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "url": "^0.11.0"
