@@ -2,6 +2,7 @@ import openColor from 'open-color/open-color.json';
 import { mapValues } from 'lodash/fp';
 
 /* eslint-disable max-len */
+
 const fonts = [
   {
     name: 'Overpass',
@@ -37,9 +38,9 @@ const fonts = [
 
 const fontFamily = {
   default:
-    "'Overpass', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol",
+    "'Overpass', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
   sans:
-    "'Overpass', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol",
+    "'Overpass', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
   serif: 'Georgia, serif',
   mono: 'Courier New, mono-space'
 };
@@ -47,7 +48,7 @@ const fontFamily = {
 /* eslint-enable max-len */
 
 const fontWeight = {
-  light: '300',
+  regular: '300',
   bold: '700'
 };
 

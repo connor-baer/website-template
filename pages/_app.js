@@ -1,31 +1,28 @@
 import React from 'react';
 import App, { Container } from 'next/app';
 import Head from 'next/head';
-import { Global } from '@emotion/core';
-import { ThemeProvider } from 'emotion-theming';
 
 import config from '../config';
-import createTheme from '../styles/theme';
-import createGlobalStyles from '../styles/global';
-import { loadFonts, preloadFonts } from '../styles/fonts';
-import isSlowConnection from '../utils/is-slow-connection';
+import { getAllCookies, CookieContext } from '../services/cookies';
 import NProgress from '../components/NProgress';
-
-if (!isSlowConnection()) {
-  loadFonts([
-    { name: 'Overpass', config: { weight: 400 } },
-    { name: 'Overpass', config: { weight: 700 } }
-  ]);
-}
+import Theme from '../components/Theme';
 
 const { name, locale, twitter } = config.site;
 
 export default class CustomApp extends App {
+  static async getInitialProps({ Component, ctx }) {
+    const cookies = getAllCookies(ctx);
+    const pageProps = Component.getInitialProps
+      ? await Component.getInitialProps(ctx)
+      : {};
+
+    return { pageProps, cookies };
+  }
+
   render() {
-    const { Component, pageProps = {} } = this.props;
+    const { Component, pageProps = {}, cookies = {} } = this.props;
     const { meta = {} } = pageProps;
     const { title, description, type, image } = meta;
-    const theme = createTheme();
     return (
       <Container>
         <Head>
@@ -48,14 +45,14 @@ export default class CustomApp extends App {
           {locale && (
             <meta property="og:locale" content={locale.replace('-', '_')} />
           )}
-          {preloadFonts(theme.fonts)}
         </Head>
 
-        <ThemeProvider theme={theme}>
-          <Global styles={createGlobalStyles(theme)} />
-          <NProgress />
-          <Component {...pageProps} />
-        </ThemeProvider>
+        <CookieContext.Provider value={cookies}>
+          <Theme>
+            <NProgress />
+            <Component {...pageProps} />
+          </Theme>
+        </CookieContext.Provider>
       </Container>
     );
   }

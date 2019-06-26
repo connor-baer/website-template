@@ -3822,6 +3822,11 @@ es-abstract@^1.11.0, es-abstract@^1.12.0, es-abstract@^1.5.1, es-abstract@^1.7.0
     is-regex "^1.0.4"
     object-keys "^1.0.12"
 
+es-cookie@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/es-cookie/-/es-cookie-1.2.0.tgz#1f942d37f67ebc27739aa3f35cf9432cf2ee3ae9"
+  integrity sha512-Rq23x7fV2NRhDbYHA+ebMUHJGyrHWtLd+xFoQ+Tq5kpsAv6FmqpC/SFdDpFJWiwNW7XUhG3GDxVKymDz7KxSRQ==
+
 es-to-primitive@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/es-to-primitive/-/es-to-primitive-1.2.0.tgz#edf72478033456e8dda8ef09e00ad9650707f377"
@@ -4482,11 +4487,6 @@ fn-name@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/fn-name/-/fn-name-2.0.1.tgz#5214d7537a4d06a4a301c0cc262feb84188002e7"
   integrity sha1-UhTXU3pNBqSjAcDMJi/rhBiAAuc=
-
-fontfaceobserver@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/fontfaceobserver/-/fontfaceobserver-2.1.0.tgz#e2705d293e2c585a6531c2a722905657317a2991"
-  integrity sha512-ReOsO2F66jUa0jmv2nlM/s1MiutJx/srhAe2+TE8dJCMi02ZZOcCTxTCQFr3Yet+uODUtnr4Mewg+tNQ+4V1Ng==
 
 for-in@^1.0.1, for-in@^1.0.2:
   version "1.0.2"
