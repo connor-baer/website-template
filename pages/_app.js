@@ -1,6 +1,8 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import App, { Container } from 'next/app';
 import Head from 'next/head';
+import Link from 'next/link';
 
 import config from '../config';
 import { getAllCookies, CookieContext } from '../services/cookies';
@@ -50,6 +52,17 @@ export default class CustomApp extends App {
         <CookieContext.Provider value={cookies}>
           <Theme>
             <NProgress />
+            <nav>
+              <Link href="/">
+                <a>Home</a>
+              </Link>
+              <Link
+                href="/posts/[post]"
+                as="/posts/5dd01c48930a4c7f88def9340191a045"
+              >
+                <a>Post</a>
+              </Link>
+            </nav>
             <Component {...pageProps} />
           </Theme>
         </CookieContext.Provider>

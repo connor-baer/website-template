@@ -5,11 +5,11 @@ import { API_BASEURL } from '../constants/api';
 
 const PAGE_ID = '45681aeff7a3405c86925a3162a46b5c';
 
-function getHost(req) {
+function getHost(req = {}) {
   if (process.env.DEV) {
-    return 'http://localhost:3000';
+    return 'localhost:3000';
   }
-  return req ? `https://${req.headers.host}` : '';
+  return req ? req.headers.host : '';
 }
 
 function fetchData(fullUrl) {
@@ -19,10 +19,12 @@ function fetchData(fullUrl) {
 }
 
 // eslint-disable-next-line import/prefer-default-export
-export function fetchNotionData(req) {
-  const host = getHost(req);
+export function fetchNotionData(ctx = {}) {
+  const { query = {} } = ctx;
+  const { post: pageId = PAGE_ID } = query;
+  const host = getHost(ctx.req);
+  const protocol = process.env.DEV ? 'http' : 'https';
   const pathname = `${API_BASEURL}/page`;
-  const query = { pageId: PAGE_ID };
-  const fullUrl = url.format({ host, pathname, query });
+  const fullUrl = url.format({ protocol, host, pathname, query: { pageId } });
   return fetchData(fullUrl);
 }

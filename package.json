@@ -27,13 +27,14 @@
     "es-cookie": "^1.2.0",
     "isomorphic-unfetch": "^3.0.0",
     "lodash": "^4.17.11",
-    "next": "^8.1.0",
+    "next": "^8.1.1-canary.61",
     "node-fetch": "^2.3.0",
     "nprogress": "^0.2.0",
     "open-color": "^1.7.0",
     "polished": "^3.4.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-ssr-prepass": "^1.0.5",
     "url": "^0.11.0"
   },
   "devDependencies": {

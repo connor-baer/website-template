@@ -4,9 +4,9 @@ import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
 
-import { fetchNotionData } from '../services/api';
-import Image from '../components/Image';
-import Highlight from '../components/Highlight';
+import { fetchNotionData } from '../../services/api';
+import Image from '../../components/Image';
+import Highlight from '../../components/Highlight';
 
 const options = {
   renderNode: {
