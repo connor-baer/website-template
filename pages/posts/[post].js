@@ -5,6 +5,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 
 import { fetchNotionPage } from '../../services/api';
+import useLivePreview from '../../hooks/useLivePreview';
 import Image from '../../components/Image';
 import Highlight from '../../components/Highlight';
 import Anchor from '../../components/Anchor';
@@ -24,7 +25,9 @@ const options = {
   }
 };
 
-export default function Page({ content = {}, meta = {} }) {
+export default function Page(props) {
+  const { content = {}, meta = {} } = useLivePreview(props);
+
   return (
     <article>
       <h1>
