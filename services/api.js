@@ -13,7 +13,10 @@ function getHost(req = {}) {
 function fetchData(fullUrl) {
   return fetch(fullUrl)
     .then(r => r.json())
-    .catch(error => ({ error }));
+    .catch(error => {
+      console.error(error);
+      return { error };
+    });
 }
 
 // eslint-disable-next-line import/prefer-default-export
