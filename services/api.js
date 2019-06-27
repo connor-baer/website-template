@@ -3,14 +3,14 @@ import fetch from 'isomorphic-unfetch';
 
 import { API_BASEURL } from '../constants/api';
 
-function getHost(req = {}) {
+function getHost(req) {
   if (process.env.DEV) {
     return 'localhost:3000';
   }
   return req ? req.headers.host : '';
 }
 
-function getProtocol(req = {}) {
+function getProtocol(req) {
   if (process.env.DEV) {
     return 'http';
   }
