@@ -3,7 +3,8 @@
 exports[`Highlight should render with default styles 1`] = `
 .circuit-0 {
   display: inline;
-  background-color: #fbf3db;
+  color: #000;
+  background-color: #fff3bf;
 }
 
 .circuit-0::before,
@@ -39,7 +40,7 @@ exports[`Highlight should render with default styles 1`] = `
 
 @media print {
   .circuit-0 {
-    border: 1pt dotted #000;
+    border: 1pt dotted #000000;
   }
 }
 

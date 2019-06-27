@@ -1,3 +1,4 @@
+import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 import { hideVisually } from 'polished';
 
@@ -6,9 +7,10 @@ import { hideVisually } from 'polished';
  * http://adrianroselli.com/2017/12/tweaking-text-level-styles.html
  */
 
-const Highlight = styled('mark')`
+const baseStyles = ({ theme }) => css`
   display: inline;
-  background-color: #fbf3db;
+  color: #000;
+  background-color: ${theme.colors.y100};
 
   &::before,
   &::after {
@@ -29,8 +31,10 @@ const Highlight = styled('mark')`
   }
 
   @media print {
-    border: 1pt dotted #000;
+    border: 1pt dotted ${theme.colors.black};
   }
 `;
+
+const Highlight = styled('mark')(baseStyles);
 
 export default Highlight;
