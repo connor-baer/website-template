@@ -361,18 +361,29 @@ function createResetStyles() {
 function createBaseStyles(theme) {
   return css`
     html {
+      box-sizing: border-box;
+      text-decoration-skip: ink;
+      text-decoration-skip-ink: auto;
       background-color: ${theme.colors.bodyBg};
       color: ${theme.colors.bodyColor};
     }
 
-    body {
-      font-family: ${theme.fontFamily.default};
-      font-weight: ${theme.fontWeight.regular};
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+      text-decoration-skip: inherit;
+      text-decoration-skip-ink: inherit;
     }
 
     *::selection {
       background-color: ${theme.colors.selectionBg};
       color: ${theme.colors.selectionColor};
+    }
+
+    body {
+      font-family: ${theme.fontFamily.default};
+      font-weight: ${theme.fontWeight.regular};
     }
 
     h1,
