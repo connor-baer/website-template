@@ -2,18 +2,22 @@
 import React from 'react';
 // eslint-disable-next-line max-len
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BLOCKS } from '@contentful/rich-text-types';
+import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 
 import { fetchNotionData } from '../services/api';
 import Image from '../components/Image';
 import Highlight from '../components/Highlight';
+import Anchor from '../components/Anchor';
 
 const options = {
   renderNode: {
     [BLOCKS.EMBEDDED_ENTRY]: node => {
       const { src, alt } = node.data;
       return <Image src={src} alt={alt} />;
-    }
+    },
+    [INLINES.HYPERLINK]: (node, children) => (
+      <Anchor href={node.data.uri}>{children}</Anchor>
+    )
   },
   renderMark: {
     highlight: text => <Highlight>{text}</Highlight>

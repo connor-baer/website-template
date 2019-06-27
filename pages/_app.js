@@ -2,12 +2,12 @@
 import React from 'react';
 import App, { Container } from 'next/app';
 import Head from 'next/head';
-import Link from 'next/link';
 
 import config from '../config';
 import { getAllCookies, CookieContext } from '../services/cookies';
 import NProgress from '../components/NProgress';
 import Theme from '../components/Theme';
+import Anchor from '../components/Anchor';
 
 const { name, locale, twitter } = config.site;
 
@@ -53,15 +53,13 @@ export default class CustomApp extends App {
           <Theme>
             <NProgress />
             <nav>
-              <Link href="/">
-                <a>Home</a>
-              </Link>
-              <Link
+              <Anchor href="/">Home</Anchor>
+              <Anchor
                 href="/posts/[post]"
                 as="/posts/5dd01c48930a4c7f88def9340191a045"
               >
-                <a>Post</a>
-              </Link>
+                Other Post
+              </Anchor>
             </nav>
             <Component {...pageProps} />
           </Theme>
