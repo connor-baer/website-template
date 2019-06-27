@@ -3,8 +3,6 @@ import fetch from 'isomorphic-unfetch';
 
 import { API_BASEURL } from '../constants/api';
 
-const PAGE_ID = '45681aeff7a3405c86925a3162a46b5c';
-
 function getHost(req = {}) {
   if (process.env.DEV) {
     return 'localhost:3000';
@@ -19,9 +17,9 @@ function fetchData(fullUrl) {
 }
 
 // eslint-disable-next-line import/prefer-default-export
-export function fetchNotionData(ctx = {}) {
+export function fetchNotionPage(ctx = {}) {
   const { query = {} } = ctx;
-  const { post: pageId = PAGE_ID } = query;
+  const { post: pageId } = query;
   const host = getHost(ctx.req);
   const protocol = process.env.DEV ? 'http' : 'https';
   const pathname = `${API_BASEURL}/page`;

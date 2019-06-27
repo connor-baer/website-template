@@ -24,7 +24,7 @@ export default class CustomApp extends App {
   render() {
     const { Component, pageProps = {}, cookies = {} } = this.props;
     const { meta = {} } = pageProps;
-    const { title, description, type, image } = meta;
+    const { title, description, type, image = {} } = meta;
     return (
       <Container>
         <Head>
@@ -41,7 +41,7 @@ export default class CustomApp extends App {
           {description && (
             <meta property="og:description" content={description} />
           )}
-          {image && <meta property="og:image" content={image} />}
+          {image && <meta property="og:image" content={image.src} />}
           {type && <meta property="og:type" content={type} />}
           {/* <meta property="og:url" content={cannonicalUrl} /> */}
           {locale && (
@@ -53,12 +53,18 @@ export default class CustomApp extends App {
           <Theme>
             <NProgress />
             <nav>
-              <Anchor href="/">Home</Anchor>
+              <Anchor href="/">Home</Anchor>{' '}
+              <Anchor
+                href="/posts/[post]"
+                as="/posts/45681aeff7a3405c86925a3162a46b5c"
+              >
+                Matt
+              </Anchor>{' '}
               <Anchor
                 href="/posts/[post]"
                 as="/posts/5dd01c48930a4c7f88def9340191a045"
               >
-                Other Post
+                Carina
               </Anchor>
             </nav>
             <Component {...pageProps} />

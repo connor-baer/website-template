@@ -38,7 +38,7 @@ function getNotionMeta(data) {
 
   const emoji = get('value.format.page_icon', page);
   const url = get('value.format.page_cover', page);
-  const image = getImageUrl(url);
+  const image = { src: getImageUrl(url) };
 
   const { name, ...rest } = properties;
 

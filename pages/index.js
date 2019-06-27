@@ -1,39 +1,22 @@
-/* eslint-disable react/display-name */
 import React from 'react';
-// eslint-disable-next-line max-len
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 
-import { fetchNotionData } from '../services/api';
 import Image from '../components/Image';
-import Highlight from '../components/Highlight';
-import Anchor from '../components/Anchor';
 
-const options = {
-  renderNode: {
-    [BLOCKS.EMBEDDED_ENTRY]: node => {
-      const { src, alt } = node.data;
-      return <Image src={src} alt={alt} />;
-    },
-    [INLINES.HYPERLINK]: (node, children) => (
-      <Anchor href={node.data.uri}>{children}</Anchor>
-    )
-  },
-  renderMark: {
-    highlight: text => <Highlight>{text}</Highlight>
+const META = {
+  title: 'Welcome',
+  image: {
+    src: 'https://images.unsplash.com/photo-1533745848184-3db07256e163'
   }
 };
+const CONTENT = {};
 
-export default function Page({ content = {}, meta = {} }) {
+export default function Page({ meta = {} }) {
   return (
     <article>
-      <h1>
-        {meta.emoji}
-        {meta.title}
-      </h1>
-      {documentToReactComponents(content, options)}
+      <h1>{meta.title}</h1>
+      <Image {...meta.image} />
     </article>
   );
 }
 
-Page.getInitialProps = ctx => fetchNotionData(ctx);
+Page.getInitialProps = () => ({ meta: META, content: CONTENT });
