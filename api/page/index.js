@@ -9,7 +9,7 @@ module.exports = async (req, res) => {
     const { query } = parse(req.url, true);
 
     const page = await loadPageChunk(query);
-    const content = richTextFromNotion(page);
+    const content = richTextFromNotion(page, { preserveLayout: true });
     const meta = getNotionMeta(page);
 
     res.json({ meta, content, page });

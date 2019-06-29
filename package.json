@@ -22,7 +22,7 @@
     "@emotion/babel-preset-css-prop": "^10.0.9",
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.12",
-    "@madebyconnor/rich-text-from-notion": "^1.0.0-alpha.4",
+    "@madebyconnor/rich-text-from-notion": "^1.0.0-alpha.5",
     "emotion-theming": "^10.0.10",
     "es-cookie": "^1.2.0",
     "isomorphic-unfetch": "^3.0.0",

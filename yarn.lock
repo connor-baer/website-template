@@ -1036,10 +1036,10 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^12.0.9"
 
-"@madebyconnor/rich-text-from-notion@^1.0.0-alpha.4":
-  version "1.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@madebyconnor/rich-text-from-notion/-/rich-text-from-notion-1.0.0-alpha.4.tgz#6289a39b37035cb38f477df8fd68a2382f71d345"
-  integrity sha512-wMgVmUcw/k+BSuVQPTV9Uo7KvkY0GoklrqpjN6dme9Qn0NNkLq+/B+Zjrmsh3jq9coQqMgwNU5k5QvHvPZ7t2w==
+"@madebyconnor/rich-text-from-notion@^1.0.0-alpha.5":
+  version "1.0.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/@madebyconnor/rich-text-from-notion/-/rich-text-from-notion-1.0.0-alpha.5.tgz#c42f90be7c83e76c52485f93a89591b8f525fad6"
+  integrity sha512-Pt9tfH9sFFnC5b2Tl4cT0V9VtHW6tvQLJwzEMNNi6iSlY7Tjt6eriEk8pAqvwNabH2IbBOfi2PEdp56c8WJLTA==
   dependencies:
     "@contentful/rich-text-types" "^13.1.0"
 

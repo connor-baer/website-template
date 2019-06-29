@@ -2,12 +2,13 @@
 import React from 'react';
 // eslint-disable-next-line max-len
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BLOCKS, INLINES } from '@contentful/rich-text-types';
+import { BLOCKS, INLINES } from '@madebyconnor/rich-text-from-notion';
 
 import { fetchNotionPage } from '../../services/api';
 import useLivePreview from '../../hooks/useLivePreview';
 import Image from '../../components/Image';
 import Highlight from '../../components/Highlight';
+import Callout from '../../components/Callout';
 import Anchor from '../../components/Anchor';
 
 const options = {
@@ -18,6 +19,16 @@ const options = {
     },
     [INLINES.HYPERLINK]: (node, children) => (
       <Anchor href={node.data.uri}>{children}</Anchor>
+    ),
+    [BLOCKS.COLUMN]: (node, children) => (
+      <div style={{ width: `${node.data.ratio * 100}%`, float: 'left' }}>
+        {children}
+      </div>
+    ),
+    [BLOCKS.CALLOUT]: (node, children) => (
+      <Callout {...node.data}>
+        {node.data.icon} {children}
+      </Callout>
     )
   },
   renderMark: {
