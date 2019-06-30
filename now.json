@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "name": "website-template",
+  "regions": ["sfo", "bru", "gru"],
+  "routes": [
+    {
+      "src": "/api/(.+)",
+      "dest": "api/$1/index.js"
+    }
+  ],
+  "builds": [
+    { "src": "api/**/index.js", "use": "@now/node" },
+    { "src": "package.json", "use": "@now/next@canary" }
+  ]
+}
