@@ -5,11 +5,11 @@
   "routes": [
     {
       "src": "/api/(.+)",
-      "dest": "api/$1/index.js"
+      "dest": "server/api/$1/index.js"
     }
   ],
   "builds": [
-    { "src": "api/**/index.js", "use": "@now/node" },
+    { "src": "server/api/**/index.js", "use": "@now/node" },
     { "src": "package.json", "use": "@now/next@canary" }
   ]
 }

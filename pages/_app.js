@@ -54,14 +54,15 @@ export default class CustomApp extends App {
             <NProgress />
             <nav>
               <Anchor href="/">Home</Anchor>{' '}
+              <Anchor href="/posts">Posts</Anchor>{' '}
               <Anchor
-                href="/posts/[post]"
+                href="/posts/[id]"
                 as="/posts/45681aeff7a3405c86925a3162a46b5c"
               >
                 Matt
               </Anchor>{' '}
               <Anchor
-                href="/posts/[post]"
+                href="/posts/[id]"
                 as="/posts/5dd01c48930a4c7f88def9340191a045"
               >
                 Carina

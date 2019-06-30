@@ -27,13 +27,20 @@ function fetchData(fullUrl) {
     });
 }
 
-// eslint-disable-next-line import/prefer-default-export
 export function fetchNotionPage(ctx = {}) {
   const { query = {} } = ctx;
-  const { post: pageId } = query;
+  const { id: pageId } = query;
   const host = getHost(ctx.req);
   const protocol = getProtocol(ctx.req);
   const pathname = `${API_BASEURL}/page`;
   const fullUrl = url.format({ protocol, host, pathname, query: { pageId } });
+  return fetchData(fullUrl);
+}
+
+export function fetchNotionCollection(ctx = {}, query = {}) {
+  const host = getHost(ctx.req);
+  const protocol = getProtocol(ctx.req);
+  const pathname = `${API_BASEURL}/collection`;
+  const fullUrl = url.format({ protocol, host, pathname, query });
   return fetchData(fullUrl);
 }
