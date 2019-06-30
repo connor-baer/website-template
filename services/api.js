@@ -26,21 +26,31 @@ function fetchData(fullUrl) {
       return { error };
     });
 }
-
 export function fetchNotionPage(ctx = {}) {
   const { query = {} } = ctx;
-  const { id: pageId } = query;
+  const { id: pageId, ...rest } = query;
   const host = getHost(ctx.req);
   const protocol = getProtocol(ctx.req);
   const pathname = `${API_BASEURL}/page`;
-  const fullUrl = url.format({ protocol, host, pathname, query: { pageId } });
+  const fullUrl = url.format({
+    protocol,
+    host,
+    pathname,
+    query: { pageId, ...rest }
+  });
   return fetchData(fullUrl);
 }
 
-export function fetchNotionCollection(ctx = {}, query = {}) {
+export function fetchNotionCollection(ctx = {}, params) {
+  const { query = {} } = ctx;
   const host = getHost(ctx.req);
   const protocol = getProtocol(ctx.req);
   const pathname = `${API_BASEURL}/collection`;
-  const fullUrl = url.format({ protocol, host, pathname, query });
+  const fullUrl = url.format({
+    protocol,
+    host,
+    pathname,
+    query: { ...query, ...params }
+  });
   return fetchData(fullUrl);
 }
