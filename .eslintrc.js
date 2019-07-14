@@ -8,6 +8,7 @@ const customConfig = {
     objectFitPolyfill: true
   },
   rules: {
+    'notice/notice': 'off',
     'react/prop-types': 'off',
     'emotion/jsx-import': 'off',
     'jsx-a11y/anchor-is-valid': 'off'

@@ -13,7 +13,7 @@ const {
 } = require('lodash/fp');
 const { richTextFromNotion } = require('@madebyconnor/rich-text-from-notion');
 
-const { API_BASEURL } = require('../../constants/api');
+const { API_BASEURL } = require('../../../constants/api');
 
 const ISO_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSSxxx";
 

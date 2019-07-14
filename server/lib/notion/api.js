@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 const fetch = require('node-fetch');
 
-const NOTION = require('../../constants/notion');
+const NOTION = require('../../../constants/notion');
 
 async function rpc(fnName, body = {}) {
   const res = await fetch(`${NOTION.API_BASEURL}${fnName}`, {

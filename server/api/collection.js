@@ -1,7 +1,6 @@
 const { parse } = require('url');
-// const { richTextFromNotion } = require('@madebyconnor/rich-text-from-notion');
 
-const Notion = require('../../services/notion');
+const Notion = require('../lib/notion');
 
 module.exports = async (req, res) => {
   try {

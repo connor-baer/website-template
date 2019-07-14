@@ -1,6 +1,6 @@
 const { parse } = require('url');
 
-const Notion = require('../../services/notion');
+const Notion = require('../lib/notion');
 
 module.exports = async (req, res) => {
   try {
