@@ -60,8 +60,7 @@ const linkStyles = ({ theme }) => css`
   margin-left: -0.5rem;
   padding: 0.5rem;
   color: inherit;
-  text-decoration: none;
-  transition: color 0.1s ease-in-out, border 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
 
   &:hover,
   &:focus {

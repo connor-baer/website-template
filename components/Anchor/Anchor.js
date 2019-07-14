@@ -6,7 +6,8 @@ import Link from '../Link';
 
 const baseStyles = ({ theme }) => css`
   color: ${theme.colors.p500};
-  transition: color 0.1s ease-in-out, border 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out, border 0.1s ease-in-out,
+    background-color 0.1s ease-in-out, outline 0.1s ease-in-out;
 
   &:hover {
     color: ${theme.colors.p900};

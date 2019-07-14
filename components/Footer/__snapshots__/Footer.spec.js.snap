@@ -61,10 +61,8 @@ exports[`Footer should render with default styles 1`] = `
   margin-left: -0.5rem;
   padding: 0.5rem;
   color: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: color 0.1s ease-in-out,border 0.1s ease-in-out;
-  transition: color 0.1s ease-in-out,border 0.1s ease-in-out;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
 }
 
 .circuit-0:hover,

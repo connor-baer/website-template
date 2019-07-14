@@ -3,8 +3,8 @@
 exports[`Anchor should render with default styles 1`] = `
 .circuit-0 {
   color: #f06595;
-  -webkit-transition: color 0.1s ease-in-out,border 0.1s ease-in-out;
-  transition: color 0.1s ease-in-out,border 0.1s ease-in-out;
+  -webkit-transition: color 0.1s ease-in-out,border 0.1s ease-in-out,background-color 0.1s ease-in-out,outline 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border 0.1s ease-in-out,background-color 0.1s ease-in-out,outline 0.1s ease-in-out;
 }
 
 .circuit-0:hover {
