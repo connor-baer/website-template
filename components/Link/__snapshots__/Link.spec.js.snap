@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link should render with default styles 1`] = `
+<a
+  href="https://example.com/"
+>
+  example
+</a>
+`;
+
+exports[`Link should render with preview 1`] = `
+<a
+  href="https://example.com/?preview=true"
+>
+  example
+</a>
+`;

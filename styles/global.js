@@ -376,14 +376,11 @@ function createBaseStyles(theme) {
       text-decoration-skip-ink: inherit;
     }
 
-    *::selection {
-      background-color: ${theme.colors.selectionBg};
-      color: ${theme.colors.selectionColor};
-    }
-
     body {
       font-family: ${theme.fontFamily.default};
       font-weight: ${theme.fontWeight.regular};
+      max-width: 100vw;
+      overflow-x: hidden;
     }
 
     h1,

@@ -1,15 +1,12 @@
 {
   "version": 2,
   "name": "website-template",
-  "regions": ["sfo", "bru", "gru"],
-  "routes": [
-    {
-      "src": "/api/(.+)",
-      "dest": "server/api/$1/index.js"
-    }
-  ],
+  "alias": "template.connor.li",
+  "regions": ["sfo", "bru"],
   "builds": [
-    { "src": "server/api/**/index.js", "use": "@now/node" },
-    { "src": "package.json", "use": "@now/next@canary" }
+    {
+      "src": "package.json",
+      "use": "@now/next@canary"
+    }
   ]
 }

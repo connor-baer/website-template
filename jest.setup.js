@@ -7,6 +7,7 @@ import { axe, toHaveNoViolations } from 'jest-axe';
 import { createSerializer } from 'jest-emotion';
 import { ThemeProvider } from 'emotion-theming';
 
+import './__mocks__/nextRouter';
 import createTheme from './styles/theme';
 
 function renderWithTheme(renderFn) {

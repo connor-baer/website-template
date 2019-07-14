@@ -59,6 +59,7 @@ export default function Theme({ children }) {
     <>
       <Head>
         <meta name="theme-color" content={theme.colors.bodyBg} />
+        <meta name="msapplication-TileColor" content={theme.colors.p500} />
         {preloadFonts(theme.fonts)}
       </Head>
       {isTransitioning && (
@@ -79,12 +80,6 @@ export default function Theme({ children }) {
             ${createGlobalStyles(theme)}
           `}
         />
-        <button onClick={toggleDarkmode}>
-          {darkmode ? 'lights on' : 'lights off'}
-        </button>
-        <button onClick={toggleReducedMotion}>
-          {reducedMotion ? 'motion on' : 'motion off'}
-        </button>
         {children}
       </ThemeProvider>
     </>

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColumnList should render with default styles 1`] = `
+.circuit-0 {
+  grid-column: 1 / 13 !important;
+  display: grid;
+  grid-template-columns: repeat(12,[col-start] minmax(0,1fr));
+  grid-template-areas: "column-0 column-0 column-0 column-0 column-0 column-0 column-0 column-0 column-0 column-0 column-0 column-0 " "column-1 column-1 column-1 column-1 column-1 column-1 column-1 column-1 column-1 column-1 column-1 column-1 " "column-2 column-2 column-2 column-2 column-2 column-2 column-2 column-2 column-2 column-2 column-2 column-2 ";
+  margin: 2rem 0;
+}
+
+@media (min-width:600px) {
+  .circuit-0 {
+    grid-column-gap: 3rem;
+    grid-template-areas: "column-0 column-0 column-0 column-0 column-0 column-0 column-1 column-1 column-1 column-2 column-2 column-2 ";
+  }
+}
+
+<div
+  class="circuit-0 circuit-1"
+/>
+`;

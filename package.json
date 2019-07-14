@@ -9,7 +9,6 @@
     "node": ">=8.0.0"
   },
   "scripts": {
-    "dev": "now dev",
     "lint": "foundry run eslint \"**/*.js\"",
     "lint:fix": "yarn lint --fix",
     "test": "jest --watch --silent",
@@ -18,17 +17,16 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.2.0",
-    "@contentful/rich-text-types": "^13.1.0",
     "@emotion/babel-preset-css-prop": "^10.0.9",
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.12",
-    "@madebyconnor/rich-text-from-notion": "^1.0.0-alpha.5",
+    "@madebyconnor/rich-text-from-notion": "^1.0.0-alpha.9",
     "date-fns": "^2.0.0-beta.2",
     "emotion-theming": "^10.0.10",
     "es-cookie": "^1.2.0",
     "isomorphic-unfetch": "^3.0.0",
     "lodash": "^4.17.11",
-    "next": "^8.1.1-canary.61",
+    "next": "^9.0.1",
     "node-fetch": "^2.3.0",
     "nprogress": "^0.2.0",
     "open-color": "^1.7.0",
@@ -36,6 +34,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-ssr-prepass": "^1.0.5",
+    "sharp": "^0.22.1",
     "url": "^0.11.0"
   },
   "devDependencies": {
@@ -47,6 +46,6 @@
     "jest-dom": "^3.5.0",
     "jest-emotion": "^10.0.11",
     "jest-junit": "^6.4.0",
-    "now": "^15.5.0"
+    "react-svg-loader": "^3.0.3"
   }
 }

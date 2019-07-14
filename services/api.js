@@ -23,9 +23,10 @@ function fetchData(fullUrl) {
     .catch(error => {
       // eslint-disable-next-line no-console
       console.error(error);
-      return { error };
+      throw error;
     });
 }
+
 export function fetchNotionPage(ctx = {}) {
   const { query = {} } = ctx;
   const { id: pageId, ...rest } = query;

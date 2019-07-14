@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List should render with default styles 1`] = `
+.circuit-0 {
+  margin: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.circuit-0 li {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.circuit-0 li::before {
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  text-align: right;
+  color: #f06595;
+  display: inline-block;
+  min-width: 1.25em;
+  margin-left: 0rem;
+  margin-right: 0.5rem;
+}
+
+.circuit-0 p {
+  margin: 0;
+}
+
+.circuit-0 li::before {
+  content: '•';
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+  -webkit-transform-origin: right;
+  -ms-transform-origin: right;
+  transform-origin: right;
+}
+
+<ul
+  class="circuit-0 circuit-1"
+>
+  <li>
+    One
+  </li>
+  <li>
+    Two
+  </li>
+</ul>
+`;
+
+exports[`List should render with ordered styles 1`] = `
+.circuit-0 {
+  margin: 0;
+  padding-left: 0;
+  list-style-type: none;
+  counter-reset: li;
+}
+
+.circuit-0 li {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.circuit-0 li::before {
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  text-align: right;
+  color: #f06595;
+  display: inline-block;
+  min-width: 1.25em;
+  margin-left: 0rem;
+  margin-right: 0.5rem;
+}
+
+.circuit-0 p {
+  margin: 0;
+}
+
+.circuit-0 li {
+  counter-increment: li;
+}
+
+.circuit-0 li::before {
+  content: counter(li,decimal-leading-zero);
+  font-variant-numeric: tabular-nums;
+}
+
+<ul
+  class="circuit-0 circuit-1"
+  type="ordered"
+>
+  <li>
+    One
+  </li>
+  <li>
+    Two
+  </li>
+</ul>
+`;

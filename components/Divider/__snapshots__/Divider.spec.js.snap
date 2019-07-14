@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Divider should render with default styles 1`] = `
+.circuit-0 {
+  border: 3px solid #f06595;
+  margin: 2rem 0;
+  grid-column: 1 / 13 !important;
+  opacity: 0.2;
+}
+
+<hr
+  class="circuit-0 circuit-1"
+/>
+`;
