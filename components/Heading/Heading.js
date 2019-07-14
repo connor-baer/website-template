@@ -3,7 +3,7 @@ import { css } from '@emotion/core';
 
 const sizeMap = {
   h1: {
-    fontSize: ['2rem', '2.5rem']
+    fontSize: ['2.25rem', '2.75rem']
   },
   h2: {
     fontSize: ['1.75rem', '2rem']
@@ -21,7 +21,7 @@ const baseStyles = ({ theme, size, as = 'h2' }) => {
 
   return css`
     font-size: ${fontSize[0]};
-    line-height: 1.5em;
+    line-height: 1.5;
     letter-spacing: 0.15px;
     text-decoration: none;
     margin: 1em 0 0;

@@ -52,14 +52,14 @@ exports[`Header should render with default styles 1`] = `
 }
 
 .circuit-2 {
+  display: grid;
+  grid-template-columns: repeat(12,[col-start] minmax(0,1fr));
+  grid-column-gap: 1rem;
   max-width: 67.5rem;
   margin-right: auto;
   margin-left: auto;
   padding-right: 1rem;
   padding-left: 1rem;
-  display: grid;
-  grid-template-columns: repeat(12,[col-start] minmax(0,1fr));
-  grid-column-gap: 1rem;
   position: relative;
   height: 100%;
 }

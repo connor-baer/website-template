@@ -5,8 +5,8 @@ import { css } from '@emotion/core';
 import { BLOCKS } from '@madebyconnor/rich-text-from-notion';
 
 import { fetchNotionPage } from '../services/api';
+import { gridStyles, pageWidthStyles } from '../styles/shared';
 import useLivePreview from '../hooks/useLivePreview';
-import Grid from '../components/Grid';
 import Heading from '../components/Heading';
 import RichText from '../components/RichText';
 import Image from '../components/Image';
@@ -27,7 +27,7 @@ const options = {
   }
 };
 
-const gridStyles = ({ theme }) => css`
+const customStyles = ({ theme }) => css`
   margin: 2rem auto 4rem;
 
   > * {
@@ -44,7 +44,7 @@ const gridStyles = ({ theme }) => css`
   }
 `;
 
-const StyledGrid = styled(Grid)(gridStyles);
+const Article = styled('article')(gridStyles, pageWidthStyles, customStyles);
 
 const imageStyles = ({ theme }) => css`
   border-radius: ${theme.borderRadius.giga};
@@ -85,14 +85,12 @@ export default function Page(props) {
   const { content = {}, meta = {} } = useLivePreview(props, getInitialProps);
 
   return (
-    <article>
-      <StyledGrid>
-        <StyledImage {...meta.image} />
-        <Content>
-          <RichText content={content} options={options} />
-        </Content>
-      </StyledGrid>
-    </article>
+    <Article>
+      <StyledImage {...meta.image} />
+      <Content>
+        <RichText content={content} options={options} />
+      </Content>
+    </Article>
   );
 }
 

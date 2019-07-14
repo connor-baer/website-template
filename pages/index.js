@@ -7,8 +7,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, MARKS } from '@madebyconnor/rich-text-from-notion';
 
 import { fetchNotionCollection, fetchNotionPage } from '../services/api';
-import { pageWidthStyles } from '../styles/shared';
-import Grid from '../components/Grid';
+import { pageWidthStyles, gridStyles } from '../styles/shared';
 import Heading from '../components/Heading';
 import useLivePreview from '../hooks/useLivePreview';
 import Paragraph from '../components/Paragraph';
@@ -55,6 +54,8 @@ const headerStyles = ({ theme }) => css`
 
 const Header = styled('header')(headerStyles);
 
+const Grid = styled('main')(gridStyles, pageWidthStyles);
+
 const options = {
   renderNode: {
     [BLOCKS.HEADING_1]: (node, children) => (
@@ -85,7 +86,7 @@ export function Component({ content = {}, collection = {} }) {
   const { pages = [] } = collection;
   return (
     <article>
-      <Grid as="main">
+      <Grid>
         <Header>{documentToReactComponents(content, options)}</Header>
       </Grid>
       <Pages>

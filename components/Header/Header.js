@@ -2,9 +2,12 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 
-import Grid from '../Grid';
 import { getSrc } from '../Image/ImageService';
-import { fullWidthStyles } from '../../styles/shared';
+import {
+  fullWidthStyles,
+  gridStyles,
+  pageWidthStyles
+} from '../../styles/shared';
 
 const wrapperStyles = ({ theme }) => css`
   ${theme.mq.kilo} {
@@ -68,18 +71,20 @@ const titleStyles = ({ theme }) => css`
 
 const Title = styled('h1')(titleStyles);
 
-const StyledGrid = styled(Grid)`
+const contentStyles = () => css`
   position: relative;
   height: 100%;
 `;
+
+const Content = styled('div')(gridStyles, pageWidthStyles, contentStyles);
 
 export default function Header({ title, ...rest }) {
   return (
     <Wrapper>
       <Background {...rest}>
-        <StyledGrid>
+        <Content>
           <Title>{title}</Title>
-        </StyledGrid>
+        </Content>
       </Background>
     </Wrapper>
   );

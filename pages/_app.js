@@ -39,7 +39,7 @@ export default class CustomApp extends App {
             <Head>
               <meta
                 name="viewport"
-                content="width=device-width, initial-scale=1, user-scalable=no"
+                content="width=device-width, initial-scale=1"
               />
               {title && <title>{title}</title>}
               {description && <meta name="description" content={description} />}

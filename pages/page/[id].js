@@ -3,12 +3,12 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 
 import { fetchNotionPage } from '../../services/api';
+import { gridStyles, pageWidthStyles } from '../../styles/shared';
 import useLivePreview from '../../hooks/useLivePreview';
 import Header from '../../components/Header';
-import Grid from '../../components/Grid';
 import RichText from '../../components/RichText';
 
-const gridStyles = ({ theme }) => css`
+const customStyles = ({ theme }) => css`
   margin-bottom: 4rem;
 
   > * {
@@ -24,7 +24,7 @@ const gridStyles = ({ theme }) => css`
   }
 `;
 
-const StyledGrid = styled(Grid)(gridStyles);
+const Grid = styled('main')(gridStyles, pageWidthStyles, customStyles);
 
 export default function Page(props) {
   const { content = {}, meta = {} } = useLivePreview(props, fetchNotionPage);
@@ -32,9 +32,9 @@ export default function Page(props) {
   return (
     <article>
       <Header title={meta.title} image={meta.image} />
-      <StyledGrid as="main">
+      <Grid>
         <RichText content={content} />
-      </StyledGrid>
+      </Grid>
     </article>
   );
 }
