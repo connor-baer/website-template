@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 const { parse } = require('url');
 
-const NOTION = require('../../constants/notion');
+const NOTION = require('../../../constants/notion');
 
 module.exports = async (req, res) => {
   const {

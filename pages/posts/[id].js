@@ -42,7 +42,7 @@ export default function Page(props) {
   return (
     <article>
       <h1>
-        {meta.emoji} {meta.title}
+        {meta.icon} {meta.title}
       </h1>
       {documentToReactComponents(content, options)}
     </article>

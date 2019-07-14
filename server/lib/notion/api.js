@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 const fetch = require('node-fetch');
 
-const NOTION = require('../../constants/notion');
+const NOTION = require('../../../constants/notion');
 
 async function rpc(fnName, body = {}) {
   const res = await fetch(`${NOTION.API_BASEURL}${fnName}`, {
@@ -33,13 +33,13 @@ function getBodyOrNull(res) {
   }
 }
 
-function normalizePageId(pageId) {
+function normalizeId(pageId = '') {
   return pageId
     .replace(/-/g, '')
     .replace(/(.{8})(.{4})(.{4})(.{4})(.{12})/, '$1-$2-$3-$4-$5');
 }
 
-function loadPageChunk({
+function queryPageChunk({
   pageId,
   limit = 100,
   cursor = { stack: [] },
@@ -47,7 +47,7 @@ function loadPageChunk({
   verticalColumns = false
 }) {
   return rpc('loadPageChunk', {
-    pageId: normalizePageId(pageId),
+    pageId: normalizeId(pageId),
     limit,
     cursor,
     chunkNumber,
@@ -85,8 +85,8 @@ function queryCollection({
   } = query;
 
   return rpc('queryCollection', {
-    collectionId,
-    collectionViewId,
+    collectionId: normalizeId(collectionId),
+    collectionViewId: normalizeId(collectionViewId),
     loader: {
       limit,
       loadContentCover,
@@ -104,6 +104,6 @@ function queryCollection({
 }
 
 module.exports = {
-  loadPageChunk,
+  queryPageChunk,
   queryCollection
 };
