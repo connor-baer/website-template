@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading should render with default styles 1`] = `
+.circuit-0 {
+  font-size: 1.75rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 1em 0 0;
+}
+
+@media (min-width:600px) {
+  .circuit-0 {
+    font-size: 2rem;
+  }
+}
+
+.circuit-0 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.circuit-0 a:hover,
+.circuit-0 a:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<h2
+  class="circuit-0 circuit-1"
+>
+  Lychee
+</h2>
+`;
+
+exports[`Heading should render with h1 styles 1`] = `
+.circuit-0 {
+  font-size: 2.25rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 1em 0 0;
+}
+
+@media (min-width:600px) {
+  .circuit-0 {
+    font-size: 2.75rem;
+  }
+}
+
+.circuit-0 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.circuit-0 a:hover,
+.circuit-0 a:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<h1
+  class="circuit-0 circuit-1"
+>
+  Lychee
+</h1>
+`;
+
+exports[`Heading should render with h3 styles 1`] = `
+.circuit-0 {
+  font-size: 1.33rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 1em 0 0;
+}
+
+@media (min-width:600px) {
+  .circuit-0 {
+    font-size: 1.5rem;
+  }
+}
+
+.circuit-0 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.circuit-0 a:hover,
+.circuit-0 a:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<h3
+  class="circuit-0 circuit-1"
+>
+  Lychee
+</h3>
+`;
+
+exports[`Heading should render with h4 styles 1`] = `
+.circuit-0 {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.15px;
+  -moz-letter-spacing: 0.15px;
+  -ms-letter-spacing: 0.15px;
+  letter-spacing: 0.15px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 1em 0 0;
+}
+
+@media (min-width:600px) {
+  .circuit-0 {
+    font-size: 1.25rem;
+  }
+}
+
+.circuit-0 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.circuit-0 a:hover,
+.circuit-0 a:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<h4
+  class="circuit-0 circuit-1"
+>
+  Lychee
+</h4>
+`;

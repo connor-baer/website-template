@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-import { fetchNotionPage } from '../services/api';
 import useWindowFocus from './useWindowFocus';
 
-export default function useLivePreview(initialData) {
+export default function useLivePreview(initialData, fetchData) {
   const [data, setData] = useState(initialData);
   const isWindowFocused = useWindowFocus();
   const router = useRouter();
@@ -14,9 +13,13 @@ export default function useLivePreview(initialData) {
     const isPreview = !!query.preview;
 
     if (isWindowFocused && isPreview) {
-      fetchNotionPage({ query }).then(res => setData(res));
+      fetchData({ query }).then(res => {
+        if (!res.error) {
+          setData(res);
+        }
+      });
     }
-  }, [isWindowFocused, query]);
+  }, [fetchData, isWindowFocused, query]);
 
   useEffect(() => {
     setData(initialData);

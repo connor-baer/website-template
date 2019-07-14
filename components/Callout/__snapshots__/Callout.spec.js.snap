@@ -2,13 +2,27 @@
 
 exports[`Callout should render with default styles 1`] = `
 .circuit-0 {
-  background-color: #f1f3f5;
-  padding: 12px;
+  text-align: center;
+  margin: 0.5rem 0;
+  padding: 2rem;
+  border: 1px dashed #f06595;
+  border-radius: 6px;
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 2.25rem;
 }
 
-@media print {
+@media (min-width:600px) {
   .circuit-0 {
-    border: 1pt solid #495057;
+    grid-column: 1 / 13;
+    padding: 2rem 4rem;
+  }
+}
+
+@media (min-width:900px) {
+  .circuit-0 {
+    grid-column: 2 / 12;
+    padding: 2rem 6rem;
   }
 }
 

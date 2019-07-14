@@ -25,10 +25,6 @@ function getImageUrl(src) {
   return url.format({ pathname, query });
 }
 
-function getProp(path) {
-  return prop => get(path, prop);
-}
-
 function parseDate(date, time) {
   if (!date) {
     return null;
@@ -38,9 +34,13 @@ function parseDate(date, time) {
 }
 
 function getDate(prop) {
+  if (!prop) {
+    return null;
+  }
+
   const date = {};
 
-  const dates = getProp('[0][1][0][1]')(prop);
+  const dates = get('[0][1][0][1]', prop);
   const startDate = parseDate(dates.start_date, dates.start_time);
   const endDate = parseDate(dates.end_date, dates.end_time);
 
@@ -63,10 +63,16 @@ function getDate(prop) {
   return date;
 }
 
+function getMultiSelect(prop) {
+  const value = get('[0][0]', prop) || '';
+  return value.split(',');
+}
+
 const propertyMap = {
   date: getDate,
-  person: getProp('[0][1][0][1]'),
-  title: getProp('[0][0]')
+  person: get('[0][1][0][1]'),
+  title: get('[0][0]'),
+  multi_select: getMultiSelect
 };
 
 function getPage(data) {
@@ -89,23 +95,38 @@ function getId(data) {
 }
 
 function mapProperties(schema) {
-  return reduce((allProperties, property) => {
-    const [key, prop] = property;
-    const name = toLower(get(`${key}.name`, schema));
-    const type = get(`${key}.type`, schema);
-    const valueGetter = propertyMap[type];
+  const schemaEntries = entries(schema);
+  return properties =>
+    reduce(
+      (allProperties, scheme) => {
+        const [key, schemeProps = {}] = scheme;
+        const name = flow(
+          get('name'),
+          toLower
+        )(schemeProps);
+        const type = get('type', schemeProps);
 
-    if (valueGetter) {
-      const value = valueGetter(prop);
-      // eslint-disable-next-line no-param-reassign
-      allProperties[name] = { value, type };
-    }
+        const property = properties[key];
+        const valueGetter = propertyMap[type];
 
-    return allProperties;
-  }, {});
+        if (valueGetter) {
+          const value = valueGetter(property);
+          // eslint-disable-next-line no-param-reassign
+          allProperties[name] = { value, type };
+        }
+
+        return allProperties;
+      },
+      {},
+      schemaEntries
+    );
 }
 
 function isPagePublished(properties = {}) {
+  if (!properties.published) {
+    return true;
+  }
+
   const now = new Date();
 
   const start = get('published.value.start.iso', properties);
@@ -120,22 +141,20 @@ function isPagePublished(properties = {}) {
 function getPageProperties(page, schema) {
   const properties = flow(
     get('value.properties'),
-    entries,
     mapProperties(schema)
   )(page);
 
   const id = getId(page);
   const icon = get('value.format.page_icon', page);
   const coverUrl = get('value.format.page_cover', page);
-  const image = { src: getImageUrl(coverUrl) };
+  const image = coverUrl && { src: getImageUrl(coverUrl) };
   const isLive = isPagePublished(properties);
-
-  const { name, ...rest } = properties;
+  const title = get('value.properties.title[0][0]', page);
 
   return {
-    ...rest,
+    ...properties,
     id,
-    title: name.value,
+    title,
     type: 'article',
     icon,
     image,
@@ -160,7 +179,7 @@ function getCollectionProperties(collection) {
   const title = get('value.name[0][0]', collection);
   const icon = get('value.icon', collection);
   const coverUrl = get('value.cover', collection);
-  const image = { src: getImageUrl(coverUrl) };
+  const image = coverUrl && { src: getImageUrl(coverUrl) };
 
   return {
     id,
@@ -174,7 +193,7 @@ function getCollectionMeta(data) {
   return getCollectionProperties(collection);
 }
 
-function getCollectionContent(data, isPreview) {
+function getCollectionPages(data, isPreview) {
   const collection = getCollection(data);
   const schema = getSchema(collection);
 
@@ -190,5 +209,5 @@ module.exports = {
   getPageMeta,
   getPageContent,
   getCollectionMeta,
-  getCollectionContent
+  getCollectionPages
 };

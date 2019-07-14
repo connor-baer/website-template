@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation should render with default styles 1`] = `
+.circuit-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 1rem;
+  max-width: 80rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width:600px) {
+  .circuit-4 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+@media (min-width:600px) {
+  .circuit-4 {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
+.circuit-0 {
+  border: 0;
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.circuit-2 {
+  margin-left: 1rem;
+  margin-right: -1rem;
+  padding: 1rem;
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: color 0.1s ease-in-out,border 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border 0.1s ease-in-out;
+}
+
+.circuit-2:hover,
+.circuit-2:focus {
+  color: #f06595;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.circuit-2:focus {
+  outline: thin dotted currentColor;
+  outline-offset: 0.25em;
+}
+
+.circuit-2:active {
+  color: #f06595;
+}
+
+@media (min-width:600px) {
+  .circuit-2 {
+    margin-left: 2rem;
+  }
+}
+
+@media (min-width:900px) {
+  .circuit-2 {
+    margin-left: 3rem;
+  }
+}
+
+<div
+  class="circuit-4 circuit-5"
+>
+  <a
+    href="/"
+    title="Home"
+  >
+    <div>
+      logo.svg
+    </div>
+    <span
+      class="circuit-0 circuit-1"
+      id="site-name"
+    >
+      Website Template
+    </span>
+  </a>
+  <nav>
+    <a
+      class="circuit-2 circuit-3"
+      href="/about"
+    >
+      About
+    </a>
+  </nav>
+</div>
+`;

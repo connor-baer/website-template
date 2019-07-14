@@ -6,6 +6,10 @@ module.exports = {
     '@testing-library/react/cleanup-after-each',
     '<rootDir>/jest.setup.js'
   ],
+  transform: {
+    '^.+\\.jsx?$': 'babel-jest',
+    '^.+\\.svg$': '<rootDir>/jest.fileTransform.js'
+  },
   testEnvironmentOptions: {
     pretendToBeVisual: true
   },

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quote should render with default styles 1`] = `
+.circuit-0 {
+  margin: 1rem 0;
+  padding-left: 2rem;
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 2.25rem;
+  position: relative;
+}
+
+.circuit-0::before {
+  display: block;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background-color: #f06595;
+}
+
+<blockquote
+  class="circuit-0 circuit-1"
+>
+  Bacon ipsum dolor amet swine shank biltong ham bacon.
+</blockquote>
+`;

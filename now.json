@@ -1,15 +1,20 @@
 {
   "version": 2,
   "name": "website-template",
-  "regions": ["sfo", "bru", "gru"],
+  "alias": "template.connor.li",
+  "regions": ["sfo", "bru"],
   "routes": [
     {
       "src": "/api/(.+)",
-      "dest": "server/api/$1/index.js"
+      "dest": "server/api/$1.js"
     }
   ],
   "builds": [
-    { "src": "server/api/**/index.js", "use": "@now/node" },
-    { "src": "package.json", "use": "@now/next@canary" }
+    {
+      "src": "server/api/**.js",
+      "use": "@now/node@canary",
+      "config": { "maxLambdaSize": "10mb" }
+    },
+    { "src": "package.json", "use": "@now/next" }
   ]
 }

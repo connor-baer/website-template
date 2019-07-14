@@ -1,15 +1,72 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Image should render with default styles 1`] = `
-.circuit-0 {
-  line-height: 0;
-  max-width: 100%;
+.circuit-2 {
+  display: block;
+  position: relative;
+  overflow: hidden;
   height: auto;
+  width: 100%;
 }
 
-<img
-  alt="A random image from Unsplash"
-  class="circuit-0 circuit-1"
-  src="https://source.unsplash.com/random"
-/>
+.circuit-0 {
+  display: block;
+  line-height: 0;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  color: inherit;
+  text-align: center;
+}
+
+<div
+  class="circuit-2 circuit-3"
+>
+  <img
+    alt="A random image from Unsplash"
+    class="circuit-0 circuit-1"
+    src="https://source.unsplash.com/random?w=500"
+  />
+</div>
+`;
+
+exports[`Image should render with fixed aspect ratio styles 1`] = `
+.circuit-2 {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: auto;
+  width: 100%;
+  height: 0;
+  padding-top: 60%;
+}
+
+.circuit-0 {
+  display: block;
+  line-height: 0;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  color: inherit;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  object-fit: cover;
+}
+
+<div
+  class="circuit-2 circuit-3"
+>
+  <img
+    alt="A random image from Unsplash"
+    class="circuit-0 circuit-1"
+    src="https://source.unsplash.com/random?w=500&h=300"
+  />
+</div>
 `;

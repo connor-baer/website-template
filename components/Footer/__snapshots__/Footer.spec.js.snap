@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should render with default styles 1`] = `
+.circuit-8 {
+  max-width: 80rem;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 6rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+@media (min-width:600px) {
+  .circuit-8 {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
+.circuit-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-top: 2px solid #f06595;
+  padding: 5rem 0 2rem;
+}
+
+@media (min-width:900px) {
+  .circuit-6 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+.circuit-2 {
+  margin: 0 0 2rem 0;
+  padding: 0;
+}
+
+@media (min-width:900px) {
+  .circuit-2 {
+    margin-bottom: 0;
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+}
+
+.circuit-0 {
+  display: inline-block;
+  width: calc(50% + 0.5rem);
+  margin-left: -0.5rem;
+  padding: 0.5rem;
+  color: inherit;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.circuit-0:hover,
+.circuit-0:focus {
+  color: #f06595;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.circuit-0:focus {
+  outline: thin dotted currentColor;
+  outline-offset: 0.25em;
+}
+
+.circuit-0:active {
+  color: #f06595;
+}
+
+@media (min-width:600px) {
+  .circuit-0 {
+    width: auto;
+    margin-right: 3rem;
+    margin-left: -1rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width:900px) {
+  .circuit-0 {
+    margin-left: 3rem;
+    margin-right: -1rem;
+    padding: 0 1rem;
+  }
+}
+
+.circuit-4 {
+  line-height: 1.75rem;
+}
+
+@media (min-width:900px) {
+  .circuit-4 {
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+}
+
+<footer
+  class="circuit-8 circuit-9"
+>
+  <div
+    class="circuit-6 circuit-7"
+  >
+    <div
+      class="circuit-2 circuit-3"
+    >
+      <a
+        class="circuit-0 circuit-1"
+        href="https://githup.com/connor-baer/website-template"
+      >
+        Github
+      </a>
+    </div>
+    <span
+      class="circuit-4 circuit-5"
+    >
+      All rights reserved – 
+      Connor Bär
+       – 
+      2019
+    </span>
+  </div>
+</footer>
+`;

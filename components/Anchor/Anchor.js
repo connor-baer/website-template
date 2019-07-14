@@ -1,22 +1,20 @@
 import React from 'react';
-import Link from 'next/link';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 
+import Link from '../Link';
+
 const baseStyles = ({ theme }) => css`
   color: ${theme.colors.p500};
-  transition: color 0.1s ease-in-out, border 0.1s ease-in-out;
-
-  &:visited {
-    color: ${theme.colors.v900};
-  }
+  transition: color 0.1s ease-in-out, border 0.1s ease-in-out,
+    background-color 0.1s ease-in-out, outline 0.1s ease-in-out;
 
   &:hover {
     color: ${theme.colors.p900};
   }
 
   &:focus {
-    outline: thin solid currentColor;
+    outline: thin dotted currentColor;
     outline-offset: 0.25em;
   }
 
