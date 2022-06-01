@@ -34,7 +34,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-ssr-prepass": "^1.0.5",
-    "sharp": "^0.22.1",
+    "sharp": "^0.30.5",
     "url": "^0.11.0"
   },
   "devDependencies": {
